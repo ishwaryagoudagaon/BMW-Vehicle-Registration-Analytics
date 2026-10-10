@@ -96,15 +96,6 @@ KBA-based / Public Registration Data
                  ↓
     Interactive BMW Registration Dashboard
 ```
-
-The datasets are kept separate because they have different time coverage
-and levels of detail. Combining them without checking their grain and
-overlapping measures could double-count registrations.
-
-**Implementation note:** Document the SQL execution environment
-accurately. Do not describe BigQuery as part of the implemented pipeline
-unless the queries are actually executed there.
-
 ------------------------------------------------------------------------
 
 ## 📊 Dashboard Philosophy
@@ -172,40 +163,7 @@ powertrain/drivetrain metrics for August 2026.
                                                   analysis
   -----------------------------------------------------------------------
 
-The dashboard describes the data as KBA-based. Add exact source URLs,
-extraction dates, and reuse notes in `data/README.md` or
-`docs/data_sources.md` so that data provenance can be verified.
-
-### Data Quality Considerations
-
--   Store dates consistently and use the correct monthly grain.
--   Repeated model names across different months are expected; check
-    duplicates using the appropriate date-and-model combination.
--   Do not combine datasets without checking their time coverage, grain,
-    and overlapping measures.
--   Do not add hybrid totals to their subcategories if this would
-    double-count registrations.
--   Do not label registration counts as sales, revenue, or profit.
-
-------------------------------------------------------------------------
-
-## 🧮 SQL Analysis
-
-The repository can contain one consolidated SQL file:
-
-``` text
-sql/
-└── BMW_Registration_Analytics.sql
-```
-
-Organise it into three sections: 1. **Registration Overview** ---
-monthly registrations and model rankings 2. **Electrification Analysis**
---- BEV/PHEV registrations by month, model, and powertrain 3. **August
-2026 Deep Dive** --- detailed August model metrics
-
-Use the actual table and column names from the prepared datasets.
-Document the SQL dialect and execution environment, and distinguish
-validated, executed queries from illustrative queries.
+The dashboard describes the data as KBA-based  from https://autostatistiken.de/automarken-bmw/
 
 ------------------------------------------------------------------------
 
@@ -217,27 +175,15 @@ Suggested repository structure:
 BMW-Germany-Registration-Analytics/
 │
 ├── README.md
-├── sql/
-│   └── BMW_Registration_Analytics.sql
+├── BMW_Registration_Analytics.sql
 ├── data/
-│   ├── bmw_germany_registrations_sep2025_aug2026.csv
-│   ├── bmw_germany_ev_phev_registrations.csv
-│   ├── bmw_germany_model_metrics_august2026.csv
+│   ├── bmw_germany_registrations_sep2025_aug2026_cleaned.csv
+│   ├── bmw_germany_registrations_2024_2025__2026_ev_phev_cleaned.csv
+│   ├── bmw_germany_model_metrics_august_2026_cleaned.csv
 │   └── README.md
-├── Looker_Studio/
-│   ├── BMW_Germany_Registration_Analytics.pdf
-│   └── dashboard_screenshots/
-│       ├── overview.png
-│       ├── electrification.png
-│       └── august_2026_deep_dive.png
-└── docs/
-    └── data_sources.md
+├── BMW_Germany_Registration_Analytics.pdf
+
 ```
-
-This is a suggested structure. Keep only files and folders that are
-actually included in your repository, and update filenames to match your
-files.
-
 ------------------------------------------------------------------------
 
 ## 🛠️ Tools
@@ -249,9 +195,6 @@ files.
   SQL                    Analytical queries for trends and comparisons
   Google Looker Studio   Interactive dashboard and visualisation
   GitHub                 Version control, documentation, and portfolio presentation
-
-List Python or BigQuery as implemented tools only if they were actually
-used in this project.
 
 ------------------------------------------------------------------------
 
