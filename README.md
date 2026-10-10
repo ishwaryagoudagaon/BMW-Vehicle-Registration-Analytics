@@ -158,9 +158,10 @@ powertrain/drivetrain metrics for August 2026.
   EV/PHEV registrations   January 2024--August    Electrification trends
                           2026                    and model comparisons
 
-  August 2026 model       August 2026             Detailed model,
+ August 2026 model       August 2026             Detailed model,
   metrics                                         powertrain, and AWD
                                                   analysis
+
   -----------------------------------------------------------------------
 
 The dashboard describes the data as KBA-based  from https://autostatistiken.de/automarken-bmw/
@@ -193,7 +194,7 @@ BMW-Germany-Registration-Analytics/
   CSV                    Stores prepared registration datasets
   Google Sheets          Data review/preparation, if used in the workflow
   SQL                    Analytical queries for trends and comparisons
-  Google Looker Studio   Interactive dashboard and visualisation
+  Google Looker Studio   Interactive dashboard and visualization
   GitHub                 Version control, documentation, and portfolio presentation
 
 ------------------------------------------------------------------------
